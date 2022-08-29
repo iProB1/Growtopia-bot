@@ -30,27 +30,27 @@ void GrowtopiaBot::ClientHost()
     }
     Loop();
 }
-void GrowtopiaBot::UserInit() {
-	ConnectClient();
+void GrowtopiaBot::Init() {
+	ConnectClient(); // Connect to Client
 	std::cout << std::flush;
 }
 
 void GrowtopiaBot::Loop() {
-	if (TimeEnter > 200 && world.name != WorldName) {
-		if (WorldName == "" || WorldName == "-") {
-			TimeEnter = 0;
-		} else {
-			SendPacket(3, "action|join_request\nname|" + WorldName, peer); // sends join request
-			world.players.clear(); // Clears World player's data
-		}
-      TimeEnter = 0;
-      world.name = WorldName; // sets world name
+   if (TimeEnter > 200 && world.name != WorldName) {
+	if (WorldName == "" || WorldName == "-") {
+	  TimeEnter = 0;
+	} else {
+  	  SendPacket(3, "action|join_request\nname|" + WorldName, peer); // sends join request
+    	  world.players.clear(); // Clears World player's data
 	}
+     TimeEnter = 0;
+     world.name = WorldName; // sets world name
+   }
 }
 
 void GrowtopiaBot::OnConnected()
 {
-  std::cout << "Bot Connected Successfully!\n"; // bot connection
+        std::cout << "Bot Connected Successfully!\n"; // bot connection
 }
 
 void GrowtopiaBot::OnDisconnected()
