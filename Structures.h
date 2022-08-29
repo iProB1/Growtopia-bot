@@ -1,15 +1,14 @@
-struct Players
-	{
-		std::string name;
-	  std::string country;
-	  int NetID = -1;
-	  int UserID = -1;
-	  int x = -1;
-	  int y = -1;
-	  bool gone = false;
-	  bool local = false;
-	  bool mod = false;
-	};
+struct Players {
+    std::string name;
+    std::string country;
+    int NetID = -1;
+    int UserID = -1;
+    int x = -1;
+    int y = -1;
+    bool gone = false;
+    bool local = false;
+    bool mod = false;
+};
 
 class World {
 public:
