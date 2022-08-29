@@ -18,24 +18,22 @@ public:
     
     void ClientHost();
     void Init();
-	  void Loop();
+    void Loop();
   
     void OnConnected();
-	  void OnDisconnected();
+    void OnDisconnected();
     
     void OnLoginRequest();
     void OnGenericText(ENetPacket *packet);
     void OnGameMessage(std::string text);
-	  void packet_type6(std::string text);
-	  void ProcessPacket(ENetEvent* event, ENetPeer* peer);
-	
-	  void OnPlayerState(gameupdatepacket_t* packet);
-	  void OnPacketCallFunction(gameupdatepacket_t* packet);
-  	void OnTileChangeRequest(gameupdatepacket_t* packet);
-  	void OnSendMapData(gameupdatepacket_t* packet);
-  	void OnSendTileUpdateData(gameupdatepacket_t* packet);
-  	void OnSendInventoryState(gameupdatepacket_t* packet);
-  	void OnSendTreeState(gameupdatepacket_t* packet);
-  	void OnModifyItemInventory(gameupdatepacket_t* packet);
-  	void OnItemChangeObject(gameupdatepacket_t* packet);
+    void OnProcessPacket(ENetEvent* event, ENetPeer* peer);
+    void OnPlayerState(gameupdatepacket_t* packet);
+    void OnPacketCallFunction(gameupdatepacket_t* packet);
+    void OnTileChangeRequest(gameupdatepacket_t* packet);
+    void OnSendMapData(gameupdatepacket_t* packet);
+    void OnSendTileUpdateData(gameupdatepacket_t* packet);
+    void OnSendInventoryState(gameupdatepacket_t* packet);
+    void OnSendTreeState(gameupdatepacket_t* packet);
+    void OnModifyItemInventory(gameupdatepacket_t* packet);
+    void OnItemChangeObject(gameupdatepacket_t* packet);
 }
