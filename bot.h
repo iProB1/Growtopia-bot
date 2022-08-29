@@ -16,6 +16,9 @@ public:
   	ENetHost *client;
     World *world;
     
+    std::string WorldName;
+    int TimeEnter = 0;
+      
     void ClientHost();
     void Init();
     void Loop();
