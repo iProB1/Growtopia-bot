@@ -16,9 +16,14 @@ public:
   	ENetHost *client;
     World *world;
     
+    std::string ServerIP;
     std::string WorldName;
+    int Port;
     int TimeEnter = 0;
-      
+    
+    void ConnectClient();
+    void ConnectClient(std::string ServerIP, int Port);
+  
     void ClientHost();
     void Init();
     void Loop();
@@ -30,13 +35,4 @@ public:
     void OnGenericText(ENetPacket *packet);
     void OnGameMessage(std::string text);
     void OnProcessPacket(ENetEvent* event, ENetPeer* peer);
-    void OnPlayerState(gameupdatepacket_t* packet);
-    void OnPacketCallFunction(gameupdatepacket_t* packet);
-    void OnTileChangeRequest(gameupdatepacket_t* packet);
-    void OnSendMapData(gameupdatepacket_t* packet);
-    void OnSendTileUpdateData(gameupdatepacket_t* packet);
-    void OnSendInventoryState(gameupdatepacket_t* packet);
-    void OnSendTreeState(gameupdatepacket_t* packet);
-    void OnModifyItemInventory(gameupdatepacket_t* packet);
-    void OnItemChangeObject(gameupdatepacket_t* packet);
 }
