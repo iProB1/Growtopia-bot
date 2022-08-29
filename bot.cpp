@@ -16,6 +16,14 @@
 #include "enet/include/enet.h"
 #include "proton/rtparam.hpp"
 
+void GrowtopiaBot::ConnectClient() {
+     ConnectClient(ServerIP, ServerPort);
+}
+
+void GrowtopiaBot::ConnectClient(std::string ServerIP, int Port) {
+     std::cout << "soon enough for now\n";
+}
+
 void GrowtopiaBot::ClientHost()
 {
     ENetEvent event;
